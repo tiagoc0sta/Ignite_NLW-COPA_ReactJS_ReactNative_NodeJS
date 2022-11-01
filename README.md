@@ -8,3 +8,4 @@
 - next
 - reactJS
 - typescript
+- expo CLI
