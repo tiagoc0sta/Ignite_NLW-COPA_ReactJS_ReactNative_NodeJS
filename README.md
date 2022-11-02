@@ -9,3 +9,8 @@
 - reactJS
 - typescript
 - expo CLI
+- zod (schema validation)
+- short unique ID
+- tailwind
+- postcss
+- autoprefixer
