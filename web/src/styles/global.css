@@ -2,4 +2,6 @@
 @tailwind utilities;
 @tailwind components;
 
-
+body{
+  -webkit-font-smoothing: antialiased;
+}
