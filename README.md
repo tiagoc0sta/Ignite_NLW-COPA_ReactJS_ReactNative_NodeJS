@@ -2,7 +2,7 @@
 
 - app in progress:
 
-
+- tailwind
 - Fastify
 - Prisma - it is an ORM - updates database 
 - SQLite
