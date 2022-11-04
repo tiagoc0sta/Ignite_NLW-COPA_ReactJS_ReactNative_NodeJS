@@ -1,4 +1,7 @@
+- to run server: npm run dev
+
 - app in progress:
+
 
 - Fastify
 - Prisma - it is an ORM - updates database 
