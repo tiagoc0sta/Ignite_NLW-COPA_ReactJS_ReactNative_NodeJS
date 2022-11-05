@@ -27,6 +27,31 @@ export async function guessRoutes(fastify: FastifyInstance){
     const { poolId, gameId } = createGuessParams.parse(request.params)
     const { firstTeamPoints, secondTeamPoints } = createGuessBody.parse(request.body)
 
+    const participant = await prisma.participant.findUnique({
+      where: {
+        userId_poolId: {
+          poolId,
+          userId: request.user.sub,
+        }
+      }
+    })
+
+    if(!participant) {
+      return reply.status(400).send({
+        merssage: "You're not allowed to create a guess inside this pool."
+      })
+    }
+
+    const guess = await prisma.guess.findUnique({
+      where: {
+        participantId_gameId: {
+          participantId: participant.id,
+          gameId,
+        }
+      }
+    })
+
+
     return {
       poolId,
       gameId,
